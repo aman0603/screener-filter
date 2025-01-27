@@ -1,0 +1,238 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    /* padding: 10px; */
+    font-size: 12px;
+}
+
+/* Header Section */
+#header-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#header-section h1 {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#header-section nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#header-section nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 12px;
+}
+
+#header-section nav a:hover {
+    text-decoration: underline;
+}
+
+/* Filter Section */
+#filter-section {
+    background-color: #fff; /* Light background for filter section */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+   /* background-color: #f8f9fa; /* Light background for each filter row */
+    padding: 10px;
+    /* border-radius: 4px;
+    border: 1px solid #ddd; */
+}
+
+.filter-row select,
+.filter-row input {
+    border: 1px solid #cac4c4;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #333;
+    width: 200px;
+    height: 25px;
+    }
+
+#add-filter-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#add-filter-btn:hover {
+    background-color: #0056b3;
+}
+
+* Remove Button */
+.remove-filter-btn {
+    background-color: #f2ebeb;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.remove-filter-btn:hover {
+    background-color: #e5e1e1;
+}
+
+/* Results Section */
+#results-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#results-header {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Table Wrapper for Horizontal Scrolling */
+.table-wrapper {
+    overflow-x:scroll;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Table Section */
+#table-section {
+    background-color: #fff; /* Light background for table section */
+    padding: 5px;
+
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#results-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+#results-table th,
+#results-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#results-table th {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#results-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+/* Style for Select2 dropdowns */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #333;
+}
+
+.select2-dropdown {
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    /* Filter Section */
+    #filter-container {
+        flex-direction: column;
+    }
+
+    .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .filter-row select,
+    .filter-row input {
+        width: 100%;
+    }
+
+    #add-filter-btn {
+        width: 100%;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header Section */
+    #header-section h1 {
+        font-size: 12px;
+    }
+
+    #header-section nav a {
+        font-size: 12px;
+    }
+
+    /* Filter Section */
+    .filter-row select,
+    .filter-row input {
+        font-size: 12px;
+    }
+
+    /* Results Section */
+    #results-table th,
+    #results-table td {
+        font-size: 10px;
+    }
+}
