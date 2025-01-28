@@ -57,7 +57,7 @@ class DataScreenerPlugin {
             <!-- Table Section -->
             <div id="table-section">
                 <div class="table-wrapper">
-                    <table id="results-table" class="display">
+                    <table id="results-table" class="display" style='width:100%'>
                         <thead>
                             <tr>
                                 <th>Ticker</th>
@@ -65,8 +65,8 @@ class DataScreenerPlugin {
                                 <th>Sector</th>
                                 <th>Industry</th>
                                 <th>Market Cap</th>
-                                <th id="dynamic-metric-header"></th>
                                 <th>52_Week High</th>
+                                <!-- Dynamic columns will be added here -->
                             </tr>
                         </thead>
                         <tbody>
@@ -150,9 +150,15 @@ class DataScreenerPlugin {
                         'sector' => $data_row['Sector'] ?? '',
                         'industry' => $data_row['Industry'] ?? '',
                         'marketcap' => $data_row['Market Capitalization'] ?? '',
-                        'dynamic_metric' => $data_row[$filters[0]['metric']] ?? '', // Dynamic column based on selected metric
                         '52week_high' => $data_row['Stock price % From 52W High'] ?? '',
                     ];
+    
+                    // Add dynamic columns based on filters
+                    foreach ($filters as $filter) {
+                        $metric = $filter['metric'];
+                        $filtered_row[$metric] = $data_row[$metric] ?? '';
+                    }
+    
                     $filtered_data[] = $filtered_row;
                 }
     
